@@ -1,0 +1,450 @@
+{
+  "item": [
+    {
+      "id": "0c97211b-82e4-4ee8-bfac-3b4cc1ef4cb5",
+      "name": "AUTH",
+      "description": {
+        "content": "Routes for auth",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4a7a6701-b414-4a2c-9646-43c981676d6a",
+          "name": "Register",
+          "request": {
+            "description": {
+              "content": "Controller: register\nSchema: registerSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| firstName | string | Required |\n| lastName | string | Required |\n| email | string | Required |\n| password | string | Required |\n| profileImage | string | Optional |\n| role | string | Optional |\n| phoneNo | object | Optional |\n| phoneNo.countryCode | string | Optional |\n| phoneNo.number | string | Optional |\n",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "auth",
+                "register"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"sample_firstName\",\n  \"lastName\": \"sample_lastName\",\n  \"email\": \"test@example.com\",\n  \"password\": \"Password123!\",\n  \"profileImage\": \"sample_profileImage\",\n  \"role\": \"sample_role\",\n  \"phoneNo\": {\n    \"countryCode\": \"sample_countryCode\",\n    \"number\": \"sample_number\"\n  }\n}"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "a844d3c5-24b3-4362-a3cc-031daa6a560f",
+          "name": "Login",
+          "request": {
+            "description": {
+              "content": "Controller: login\nSchema: loginSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| email | string | Required |\n| password | string | Required |\n",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "auth",
+                "login"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"Password123!\"\n}"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "fc16e2c9-d8cd-4a8c-b87c-69fcbdeacd92",
+          "name": "Forgot Password",
+          "request": {
+            "description": {
+              "content": "Controller: forgotPassword\nSchema: forgotPasswordSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| email | string | Required |\n",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "auth",
+                "forgot-password"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@example.com\"\n}"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "a3d90908-d125-48c9-98f8-ff39f8a2d07a",
+          "name": "Update Password",
+          "request": {
+            "description": {
+              "content": "Controller: updatePassword\nSchema: updatePasswordSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| email | string | Required |\n| newPassword | string | Required |\n| confirmPassword | string | Required |\n",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "auth",
+                "update-password"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@example.com\",\n  \"newPassword\": \"Password123!\",\n  \"confirmPassword\": \"Password123!\"\n}"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "69c625ad-8cc9-4c5f-b407-dbbe54ef4208",
+          "name": "Reset Password",
+          "request": {
+            "description": {
+              "content": "Controller: resetPassword\nSchema: resetPasswordSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| email | string | Required |\n| oldPassword | string | Required |\n| newPassword | string | Required |\n| confirmPassword | string | Required |\n",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "auth",
+                "reset-password"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@example.com\",\n  \"oldPassword\": \"Password123!\",\n  \"newPassword\": \"Password123!\",\n  \"confirmPassword\": \"Password123!\"\n}"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "f890998e-dd16-4401-99ac-e1c89adab6ef",
+          "name": "Verify Otp",
+          "request": {
+            "description": {
+              "content": "Controller: verifyOtp\nSchema: verifyOtpSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| email | string | Required |\n| otp | string | Required |\n",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "auth",
+                "verify-otp"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@example.com\",\n  \"otp\": \"sample_otp\"\n}"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "8df77608-da53-4a7d-816b-ce85e2777029",
+          "name": "Resend Otp",
+          "request": {
+            "description": {
+              "content": "Controller: resendOtp\nSchema: resendOtpSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| email | string | Required |\n",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "auth",
+                "resend-otp"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@example.com\"\n}"
+            }
+          },
+          "response": [],
+          "event": []
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "c97312af-cd08-4dca-ab0e-5fd9f78ea56c",
+      "name": "USER",
+      "description": {
+        "content": "Routes for user",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "60305867-76fb-4ebf-a749-7730a7e75b78",
+          "name": "Add User",
+          "request": {
+            "description": {
+              "content": "Controller: addUser\nSchema: addUserSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| firstName | string | Optional |\n| lastName | string | Optional |\n| email | string | Optional |\n| phoneNo | object | Optional |\n| phoneNo.countryCode | string | Optional |\n| phoneNo.number | string | Optional |\n| password | string | Optional |\n| profileImage | string | Optional |\n| otp | number | Optional |\n| otpExpireTime | date | Optional |\n| offers | array | Optional |\n| logoTitle | string | Optional |\n| isActive | boolean | Optional |\n",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "user",
+                "add"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"sample_firstName\",\n  \"lastName\": \"sample_lastName\",\n  \"email\": \"test@example.com\",\n  \"phoneNo\": {\n    \"countryCode\": \"sample_countryCode\",\n    \"number\": \"sample_number\"\n  },\n  \"password\": \"Password123!\",\n  \"profileImage\": \"sample_profileImage\",\n  \"otp\": 123,\n  \"otpExpireTime\": \"\",\n  \"offers\": [\n    \"sample_string\"\n  ],\n  \"logoTitle\": \"sample_logoTitle\",\n  \"isActive\": true\n}"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "173fd412-14f0-474d-b731-59ed0fc73b91",
+          "name": "Edit User",
+          "request": {
+            "description": {
+              "content": "Controller: editUser\nSchema: editUserSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| userId | string | Required |\n| firstName | string | Optional |\n| lastName | string | Optional |\n| email | string | Optional |\n| phoneNo | object | Optional |\n| phoneNo.countryCode | string | Optional |\n| phoneNo.number | string | Optional |\n| password | string | Optional |\n| profileImage | string | Optional |\n| otp | number | Optional |\n| otpExpireTime | date | Optional |\n| offers | array | Optional |\n| logoTitle | string | Optional |\n| isActive | boolean | Optional |\n",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "user",
+                "edit"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": \"sample_userId\",\n  \"firstName\": \"sample_firstName\",\n  \"lastName\": \"sample_lastName\",\n  \"email\": \"test@example.com\",\n  \"phoneNo\": {\n    \"countryCode\": \"sample_countryCode\",\n    \"number\": \"sample_number\"\n  },\n  \"password\": \"Password123!\",\n  \"profileImage\": \"sample_profileImage\",\n  \"otp\": 123,\n  \"otpExpireTime\": \"\",\n  \"offers\": [\n    \"sample_string\"\n  ],\n  \"logoTitle\": \"sample_logoTitle\",\n  \"isActive\": true\n}"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "fdc145df-ef86-4e63-b813-1ae5b2c7911b",
+          "name": "Get User",
+          "request": {
+            "description": {
+              "content": "Controller: getUser\nSchema: getUserSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| page | number | Optional |\n| limit | number | Optional |\n| search | string | Optional |\n| activeFilter | boolean | Optional |\n",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "user",
+                "get"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "search",
+                  "value": "sample_search"
+                },
+                {
+                  "key": "activeFilter",
+                  "value": "true"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "6afbb3fd-0370-46be-839a-6f4e2288ba55",
+          "name": "Delete User",
+          "request": {
+            "description": {
+              "content": "Controller: deleteUser\nSchema: deleteUserSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| id | string | Required |\n",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "user",
+                ":id"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "type": "any",
+                  "key": "id"
+                },
+                {
+                  "type": "any",
+                  "value": "sample_id",
+                  "key": "id"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"sample_id\"\n}"
+            }
+          },
+          "response": [],
+          "event": []
+        }
+      ],
+      "event": [],
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "TOKEN",
+            "value": "{{TOKEN}}",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "any",
+      "value": "http://localhost:5500",
+      "key": "BASE_URL"
+    },
+    {
+      "type": "any",
+      "value": "",
+      "key": "TOKEN"
+    }
+  ],
+  "info": {
+    "_postman_id": "97308f9c-ae75-40c4-82bb-d27d072fc44b",
+    "name": "Delvoura API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Auto generated API collection",
+      "type": "text/plain"
+    }
+  }
+}
