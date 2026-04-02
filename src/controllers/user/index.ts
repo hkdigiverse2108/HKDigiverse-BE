@@ -1,8 +1,8 @@
 import { isValidObjectId } from "mongoose";
-import { HTTP_STATUS } from "../../common";
+import { HTTP_STATUS, resolvePagination, resolveSortAndFilter } from "../../common";
 import { userModel } from "../../database";
 import { countData, createOne, getData, getFirstMatch, reqInfo, responseMessage, updateData } from "../../helper";
-import { apiResponse, ICommonCriteria, ICommonIdValidate, IGetCommonValidate, IUserValidate } from "../../type";
+import { apiResponse, ICommonIdValidate, IGetCommonValidate, IUserValidate } from "../../type";
 import { addUserSchema, deleteUserSchema, editUserSchema, getUserSchema } from "../../validation";
 
 export const addUser = async (req, res) => {
@@ -76,23 +76,11 @@ export const getUser = async (req, res) => {
     const { error, value }: IGetCommonValidate = await getUserSchema.validate(req.query);
     if (error) return res.status(HTTP_STATUS.BAD_REQUEST).json(apiResponse(HTTP_STATUS.BAD_REQUEST, error?.details[0]?.message, {}, {}));
 
-    let { page, limit, search, activeFilter } = value;
-    page = Number(page);
-    limit = Number(limit);
-
-    const criteria: ICommonCriteria = {
-      isDeleted: false,
-      ...(activeFilter !== undefined && { isActive: activeFilter === true }),
-      ...(search && { title: { $regex: search, $options: "si" } }),
-    };
-
-    const options = { sort: { createdAt: -1 }, skip: (page - 1) * limit, limit };
+    let { criteria, options, page, limit } = resolveSortAndFilter(value, ["firstName", "lastName"]);
 
     const [response, totalData] = await Promise.all([getData(userModel, criteria, {}, options), countData(userModel, criteria)]);
-    const totalPages = Math.ceil(totalData / limit) || 1;
-    const state = { page, limit, totalPages };
 
-    return res.status(HTTP_STATUS.OK).json(apiResponse(HTTP_STATUS.OK, responseMessage?.getDataSuccess("User"), { user_data: response, totalData, state }, {}));
+    return res.status(HTTP_STATUS.OK).json(apiResponse(HTTP_STATUS.OK, responseMessage?.getDataSuccess("User"), { user_data: response, totalData, state: resolvePagination(page, limit) }, {}));
   } catch (error) {
     console.error(error);
     return res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json(apiResponse(HTTP_STATUS.INTERNAL_SERVER_ERROR, responseMessage.internalServerError, {}, {}));

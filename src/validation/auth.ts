@@ -1,5 +1,5 @@
 import Joi from "joi";
-import { commonPhoneNoSchema, objectId } from "./common";
+import { commonPhoneNoSchema } from "./common";
 
 export const registerSchema = Joi.object().keys({
   firstName: Joi.string().required(),
@@ -7,7 +7,6 @@ export const registerSchema = Joi.object().keys({
   email: Joi.string().email().lowercase().required(),
   password: Joi.string().required(),
   profileImage: Joi.string().optional().allow("", null),
-  role: objectId().optional(),
   phoneNo: commonPhoneNoSchema.optional(),
 });
 

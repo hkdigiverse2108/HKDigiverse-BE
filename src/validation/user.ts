@@ -11,8 +11,6 @@ export const addUserSchema = Joi.object<IUser>().keys({
   profileImage: Joi.string().optional().allow("", null),
   otp: Joi.number().optional().allow(null),
   otpExpireTime: Joi.date().optional().allow(null),
-  offers: Joi.array().items(Joi.string()).optional(),
-  logoTitle: Joi.string().optional().allow("", null),
   ...baseApiSchema,
 });
 
@@ -26,8 +24,6 @@ export const editUserSchema = Joi.object<IUser>().keys({
   profileImage: Joi.string().optional().allow("", null),
   otp: Joi.number().optional().allow(null),
   otpExpireTime: Joi.date().optional().allow(null),
-  offers: Joi.array().items(Joi.string()).optional(),
-  logoTitle: Joi.string().optional().allow("", null),
   ...baseApiSchema,
 });
 

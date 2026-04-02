@@ -1,4 +1,3 @@
-import bcryptjs from "bcryptjs";
 import { compareHash, generateHash, generateToken, getOtpExpireTime, getUniqueOtp, HTTP_STATUS } from "../../common";
 import { userModel } from "../../database";
 import { createOne, emailVerificationMail, getFirstMatch, reqInfo, responseMessage, updateData } from "../../helper";
@@ -9,15 +8,11 @@ export const register = async (req, res) => {
   reqInfo(req);
   try {
     const { error, value }: IRegisterValidate = registerSchema.validate(req.body);
-
     if (error) return res.status(HTTP_STATUS.BAD_REQUEST).json(apiResponse(HTTP_STATUS.BAD_REQUEST, error?.details[0]?.message, {}, {}));
 
-    let criteria = { $or: [] };
-    if (value?.email) criteria.$or.push({ email: value?.email });
-
-    let existingUser = await getFirstMatch(userModel, criteria, {}, {});
-    if (existingUser) {
-      if (existingUser?.email === value?.email) return res.status(HTTP_STATUS.CONFLICT).json(apiResponse(HTTP_STATUS.CONFLICT, responseMessage?.dataAlreadyExist("Email"), {}, {}));
+    let idExist = await getFirstMatch(userModel, { email: value?.email, isDeleted: false }, {}, {});
+    if (idExist) {
+      if (idExist?.email === value?.email) return res.status(HTTP_STATUS.CONFLICT).json(apiResponse(HTTP_STATUS.CONFLICT, responseMessage?.dataAlreadyExist("Email"), {}, {}));
       return res.status(HTTP_STATUS.CONFLICT).json(apiResponse(HTTP_STATUS.CONFLICT, responseMessage?.dataAlreadyExist("User"), {}, {}));
     }
 
@@ -41,11 +36,11 @@ export const login = async (req, res) => {
   reqInfo(req);
   try {
     const { error, value }: ILoginValidate = loginSchema.validate(req.body);
-    if (error) return res.status(HTTP_STATUS.BAD_GATEWAY).json(apiResponse(HTTP_STATUS.BAD_GATEWAY, error?.details[0]?.message, {}, {}));
+    if (error) return res.status(HTTP_STATUS.BAD_REQUEST).json(apiResponse(HTTP_STATUS.BAD_REQUEST, error?.details[0]?.message, {}, {}));
 
     let response = await getFirstMatch(userModel, { email: value?.email, isDeleted: false }, {}, {});
-
     if (!response) return res.status(HTTP_STATUS.BAD_REQUEST).json(apiResponse(HTTP_STATUS.BAD_REQUEST, responseMessage?.invalidEmail, {}, {}));
+
     const comparePassword = compareHash(value?.password, response?.password);
     if (!comparePassword) return res.status(HTTP_STATUS.BAD_REQUEST).json(apiResponse(HTTP_STATUS.BAD_REQUEST, responseMessage?.invalidPassword, {}, {}));
 
@@ -73,11 +68,11 @@ export const forgotPassword = async (req, res) => {
   reqInfo(req);
   try {
     const { error, value }: IForgotPasswordValidate = forgotPasswordSchema.validate(req.body);
-
     if (error) return res.status(HTTP_STATUS.BAD_REQUEST).json(apiResponse(HTTP_STATUS.BAD_REQUEST, error?.details[0]?.message, {}, {}));
 
     let response = await getFirstMatch(userModel, { email: value?.email, isDeleted: false }, {}, {});
     if (!response) return res.status(HTTP_STATUS.BAD_REQUEST).json(apiResponse(HTTP_STATUS.BAD_REQUEST, responseMessage?.getDataNotFound("User"), {}, {}));
+
     if (response?.isActive === false) return res.status(HTTP_STATUS.FORBIDDEN).json(apiResponse(HTTP_STATUS.FORBIDDEN, responseMessage?.accountBlock, {}, {}));
 
     const otp = await getUniqueOtp();
@@ -98,16 +93,16 @@ export const updatePassword = async (req, res) => {
   reqInfo(req);
   try {
     const { error, value }: IUpdatePasswordValidate = updatePasswordSchema.validate(req.body);
-
     if (error) return res.status(HTTP_STATUS.BAD_REQUEST).json(apiResponse(HTTP_STATUS.BAD_REQUEST, error?.details[0]?.message, {}, {}));
+
     if (value.newPassword !== value.confirmPassword) return res.status(HTTP_STATUS.BAD_REQUEST).json(apiResponse(HTTP_STATUS.BAD_REQUEST, responseMessage?.customMessage("Password do not match."), {}, {}));
 
     let response = await getFirstMatch(userModel, { email: value?.email, isDeleted: false }, {}, {});
     if (!response) return res.status(HTTP_STATUS.BAD_REQUEST).json(apiResponse(HTTP_STATUS.BAD_REQUEST, responseMessage?.getDataNotFound("User"), {}, {}));
+
     if (response?.isActive === false) return res.status(HTTP_STATUS.FORBIDDEN).json(apiResponse(HTTP_STATUS.FORBIDDEN, responseMessage?.accountBlock, {}, {}));
 
     const hashPassword = await generateHash(value?.newPassword);
-
     await updateData(userModel, { _id: response?._id }, { password: hashPassword, otp: null, otpExpireTime: null }, {});
 
     return res.status(HTTP_STATUS.OK).json(apiResponse(HTTP_STATUS.OK, responseMessage?.resetPasswordSuccess, {}, {}));
@@ -121,12 +116,13 @@ export const resetPassword = async (req, res) => {
   reqInfo(req);
   try {
     const { error, value }: IResetPasswordValidate = resetPasswordSchema.validate(req.body);
-
     if (error) return res.status(HTTP_STATUS.BAD_REQUEST).json(apiResponse(HTTP_STATUS.BAD_REQUEST, error?.details[0]?.message, {}, {}));
+
     if (value.newPassword !== value.confirmPassword) return res.status(HTTP_STATUS.BAD_REQUEST).json(apiResponse(HTTP_STATUS.BAD_REQUEST, responseMessage?.customMessage("Password do not match."), {}, {}));
 
     let response = await getFirstMatch(userModel, { email: value?.email, isDeleted: false }, {}, {});
     if (!response) return res.status(HTTP_STATUS.BAD_REQUEST).json(apiResponse(HTTP_STATUS.BAD_REQUEST, responseMessage?.getDataNotFound("User"), {}, {}));
+
     if (response?.isActive === false) return res.status(HTTP_STATUS.FORBIDDEN).json(apiResponse(HTTP_STATUS.FORBIDDEN, responseMessage?.accountBlock, {}, {}));
     if (value?.oldPassword === value?.newPassword) return res.status(HTTP_STATUS.BAD_REQUEST).json(apiResponse(HTTP_STATUS.BAD_REQUEST, responseMessage?.passwordSameError, {}, {}));
 
@@ -134,7 +130,6 @@ export const resetPassword = async (req, res) => {
     if (!comparePassword) return res.status(HTTP_STATUS.BAD_REQUEST).json(apiResponse(HTTP_STATUS.BAD_REQUEST, responseMessage?.invalidPassword, {}, {}));
 
     const hashPassword = await generateHash(value?.newPassword);
-
     await updateData(userModel, { _id: response?._id }, { password: hashPassword }, {});
 
     return res.status(HTTP_STATUS.OK).json(apiResponse(HTTP_STATUS.OK, responseMessage?.resetPasswordSuccess, {}, {}));
@@ -148,11 +143,11 @@ export const verifyOtp = async (req, res) => {
   reqInfo(req);
   try {
     const { error, value }: IVerifyOtpValidate = verifyOtpSchema.validate(req.body);
-
     if (error) return res.status(HTTP_STATUS.BAD_REQUEST).json(apiResponse(HTTP_STATUS.BAD_REQUEST, error?.details[0]?.message, {}, {}));
 
     let response = await getFirstMatch(userModel, { email: value?.email, isDeleted: false }, {}, {});
     if (!response) return res.status(HTTP_STATUS.BAD_REQUEST).json(apiResponse(HTTP_STATUS.BAD_REQUEST, responseMessage?.getDataNotFound("User"), {}, {}));
+
     if (response?.isActive === false) return res.status(HTTP_STATUS.FORBIDDEN).json(apiResponse(HTTP_STATUS.FORBIDDEN, responseMessage?.accountBlock, {}, {}));
 
     if (Number(response?.otp) !== Number(value?.otp)) return res.status(HTTP_STATUS.BAD_REQUEST).json(apiResponse(HTTP_STATUS.BAD_REQUEST, responseMessage?.invalidOTP, {}, {}));
@@ -172,7 +167,6 @@ export const resendOtp = async (req, res) => {
   reqInfo(req);
   try {
     const { error, value }: IResendOtpValidate = resendOtpSchema.validate(req.body);
-
     if (error) return res.status(HTTP_STATUS.BAD_REQUEST).json(apiResponse(HTTP_STATUS.BAD_REQUEST, error?.details[0]?.message, {}, {}));
 
     let response = await getFirstMatch(userModel, { email: value?.email, isDeleted: false }, {}, {});

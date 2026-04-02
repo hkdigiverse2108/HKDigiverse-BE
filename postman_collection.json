@@ -1,7 +1,7 @@
 {
   "item": [
     {
-      "id": "0c97211b-82e4-4ee8-bfac-3b4cc1ef4cb5",
+      "id": "a899fc13-a426-4820-b50e-e40deca9115c",
       "name": "AUTH",
       "description": {
         "content": "Routes for auth",
@@ -9,7 +9,7 @@
       },
       "item": [
         {
-          "id": "4a7a6701-b414-4a2c-9646-43c981676d6a",
+          "id": "62bc55b9-77a0-4021-be8d-599d846d7cac",
           "name": "Register",
           "request": {
             "description": {
@@ -43,7 +43,7 @@
           "event": []
         },
         {
-          "id": "a844d3c5-24b3-4362-a3cc-031daa6a560f",
+          "id": "d35f1635-96a8-422a-8729-31c8f753ba14",
           "name": "Login",
           "request": {
             "description": {
@@ -77,7 +77,7 @@
           "event": []
         },
         {
-          "id": "fc16e2c9-d8cd-4a8c-b87c-69fcbdeacd92",
+          "id": "cfe5552a-36b2-4d46-b09d-6acec972c983",
           "name": "Forgot Password",
           "request": {
             "description": {
@@ -111,7 +111,7 @@
           "event": []
         },
         {
-          "id": "a3d90908-d125-48c9-98f8-ff39f8a2d07a",
+          "id": "b95c8aa1-4f29-4e96-9392-e9d1639f87ce",
           "name": "Update Password",
           "request": {
             "description": {
@@ -145,7 +145,7 @@
           "event": []
         },
         {
-          "id": "69c625ad-8cc9-4c5f-b407-dbbe54ef4208",
+          "id": "37ff3c5d-10f0-4975-9fe9-25c08e6d2dbf",
           "name": "Reset Password",
           "request": {
             "description": {
@@ -179,7 +179,7 @@
           "event": []
         },
         {
-          "id": "f890998e-dd16-4401-99ac-e1c89adab6ef",
+          "id": "20b909ae-6064-492f-bddb-486c7975b9fe",
           "name": "Verify Otp",
           "request": {
             "description": {
@@ -213,7 +213,7 @@
           "event": []
         },
         {
-          "id": "8df77608-da53-4a7d-816b-ce85e2777029",
+          "id": "0716638a-db9b-4580-82a5-d2d223a5163c",
           "name": "Resend Otp",
           "request": {
             "description": {
@@ -250,7 +250,7 @@
       "event": []
     },
     {
-      "id": "c97312af-cd08-4dca-ab0e-5fd9f78ea56c",
+      "id": "58e5f282-abe9-43ea-ac4b-bd05dc539813",
       "name": "USER",
       "description": {
         "content": "Routes for user",
@@ -258,7 +258,7 @@
       },
       "item": [
         {
-          "id": "60305867-76fb-4ebf-a749-7730a7e75b78",
+          "id": "b715dd8c-dbc3-4503-898b-11221ddd4c81",
           "name": "Add User",
           "request": {
             "description": {
@@ -292,7 +292,7 @@
           "event": []
         },
         {
-          "id": "173fd412-14f0-474d-b731-59ed0fc73b91",
+          "id": "bb8a34cf-f38b-42c2-b0f9-b42a14c973df",
           "name": "Edit User",
           "request": {
             "description": {
@@ -326,7 +326,7 @@
           "event": []
         },
         {
-          "id": "fdc145df-ef86-4e63-b813-1ae5b2c7911b",
+          "id": "97aef9cd-5225-4547-a9e8-a8c341148e1d",
           "name": "Get User",
           "request": {
             "description": {
@@ -368,7 +368,7 @@
           "event": []
         },
         {
-          "id": "6afbb3fd-0370-46be-839a-6f4e2288ba55",
+          "id": "6ecb1207-7735-44a4-864f-7c4b7c07f4b3",
           "name": "Delete User",
           "request": {
             "description": {
@@ -439,8 +439,8 @@
     }
   ],
   "info": {
-    "_postman_id": "97308f9c-ae75-40c4-82bb-d27d072fc44b",
-    "name": "Delvoura API",
+    "_postman_id": "f04b361b-e44f-4071-8217-ff0f00b0c2b5",
+    "name": "HKDigiverse API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {
       "content": "Auto generated API collection",

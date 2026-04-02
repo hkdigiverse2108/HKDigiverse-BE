@@ -11,8 +11,6 @@ export interface IUser extends IBase {
   showPassword?: string;
   otp?: number;
   otpExpireTime?: Date;
-  offers?: string[];
-  logoTitle?: string;
   userId?: Schema.Types.ObjectId;
 }
 

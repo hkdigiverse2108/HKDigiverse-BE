@@ -12,8 +12,6 @@ const userSchema = new Schema<IUser>(
     profileImage: { type: String },
     otp: { type: Number, default: null },
     otpExpireTime: { type: Date, default: null },
-    offers: { type: [String], default: [] },
-    logoTitle: { type: String },
     ...commonFields,
   },
   commonSchemaOptions,

@@ -278,7 +278,7 @@ async function syncToPostman(collectionJSON: any) {
 async function main() {
   const collection = new Collection({
     info: {
-      name: "Delvoura API",
+      name: "HKDigiverse API",
       description: {
         content: "Auto generated API collection",
         type: "text/plain",
