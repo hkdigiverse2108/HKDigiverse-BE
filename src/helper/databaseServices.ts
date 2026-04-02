@@ -45,7 +45,7 @@ export const createMany = async (modelName, objToSave) => {
   return new modelName.insertMany(objToSave);
 };
 
-// ================ All Create Services ================
+// ================ All Update Services ================
 
 export const updateData = async (modelName, criteria, dataToSet, options) => {
   options.returnDocument = "after";
@@ -57,7 +57,16 @@ export const updateMany = async (modelName, criteria, dataToSet, options) => {
   return modelName.updateMany(criteria, dataToSet, options);
 };
 
+// ================ All Delete Services ================
+
+export const deleteData = async (model, criteria, options) => {
+  options.returnDocument = "after";
+  options.lean = true;
+  return await model.findOneAndUpdate(criteria, { isDeleted: true }, options);
+};
+
 // ================ Count Data Services ================
+
 export const countData = async (modelName, criteria) => {
   return modelName.countDocuments(criteria);
 };

@@ -1,5 +1,5 @@
 import Joi from "joi";
-import { ICommonGetValidate, ICommonIdValidate, IId, IUser } from "../type";
+import { ICommonGetValidate, IId, IUser } from "../type";
 import { baseApiSchema, baseCommonFieldSchema, commonContactSchema, objectId } from "./common";
 
 export const addUserSchema = Joi.object<IUser>().keys({
@@ -31,10 +31,10 @@ export const editUserSchema = Joi.object<IUser>().keys({
   ...baseApiSchema,
 });
 
-export const deleteUserSchema = Joi.object<IId>({
+export const deleteUserSchema = Joi.object<IId>().keys({
   id: objectId().required(),
 });
 
-export const getUserSchema = Joi.object<ICommonGetValidate>({
+export const getUserSchema = Joi.object<ICommonGetValidate>().keys({
   ...baseCommonFieldSchema,
 });
