@@ -15,7 +15,7 @@ export const baseApiSchema = {
   isActive: Joi.boolean().optional(),
 };
 
-export const commonContactSchema = Joi.object().keys({
+export const commonPhoneNoSchema = Joi.object().keys({
   countryCode: Joi.string().optional().allow("", null),
   number: Joi.string()
     .pattern(/^\d{6,15}$/)

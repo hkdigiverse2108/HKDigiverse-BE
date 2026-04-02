@@ -1,12 +1,12 @@
 import Joi from "joi";
 import { ICommonGetValidate, IId, IUser } from "../type";
-import { baseApiSchema, baseCommonFieldSchema, commonContactSchema, objectId } from "./common";
+import { baseApiSchema, baseCommonFieldSchema, commonPhoneNoSchema, objectId } from "./common";
 
 export const addUserSchema = Joi.object<IUser>().keys({
   firstName: Joi.string().optional().allow(""),
   lastName: Joi.string().optional().allow(""),
   email: Joi.string().email().optional().allow(""),
-  phoneNo: commonContactSchema.optional(),
+  phoneNo: commonPhoneNoSchema.optional(),
   password: Joi.string().optional().allow(""),
   profileImage: Joi.string().optional().allow("", null),
   otp: Joi.number().optional().allow(null),
@@ -21,7 +21,7 @@ export const editUserSchema = Joi.object<IUser>().keys({
   firstName: Joi.string().optional().allow(""),
   lastName: Joi.string().optional().allow(""),
   email: Joi.string().email().optional().allow(""),
-  phoneNo: commonContactSchema.optional(),
+  phoneNo: commonPhoneNoSchema.optional(),
   password: Joi.string().optional().allow(""),
   profileImage: Joi.string().optional().allow("", null),
   otp: Joi.number().optional().allow(null),

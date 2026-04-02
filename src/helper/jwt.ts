@@ -1,18 +1,9 @@
-import jwt from "jsonwebtoken";
 import { Request, Response } from "express";
+import { HTTP_STATUS, isValidObjectId, verifyToken } from "../common";
 import { userModel } from "../database";
-import { responseMessage } from "./responseMessage";
-import { HTTP_STATUS, isValidObjectId } from "../common";
-import { getFirstMatch } from "./databaseServices";
 import { apiResponse } from "../type";
-
-const jwt_token_secret = process.env.JWT_TOKEN_SECRET;
-
-const verifyToken = (authorization?: string) => {
-  if (!authorization) return null;
-  const token = authorization.startsWith("Bearer ") ? authorization.split(" ")[1] : authorization;
-  return jwt.verify(token, jwt_token_secret) as any;
-};
+import { getFirstMatch } from "./databaseServices";
+import { responseMessage } from "./responseMessage";
 
 export const adminJWT = async (req: Request, res: Response, next) => {
   let { authorization } = req.headers,
