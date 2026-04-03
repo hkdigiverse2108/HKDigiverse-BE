@@ -63,7 +63,7 @@ export const verifyToken = (authorization?: string) => {
               Object Id
 -------------------------------------- */
 
-export const isValidObjectId = (id = "") => {
+export const isValidObjectId = (id:any = "") => {
   return Types.ObjectId.isValid(id) ? new Types.ObjectId(id) : false;
 };
 

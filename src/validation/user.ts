@@ -1,6 +1,6 @@
 import Joi from "joi";
 import { ICommonGetValidate, IId, IUser } from "../type";
-import { baseApiSchema, baseCommonFieldSchema, commonPhoneNoSchema, objectId } from "./common";
+import { commonApiSchema, CommonFieldSchema, commonPhoneNoSchema, objectId } from "./common";
 
 export const addUserSchema = Joi.object<IUser>().keys({
   firstName: Joi.string().optional().allow(""),
@@ -11,7 +11,7 @@ export const addUserSchema = Joi.object<IUser>().keys({
   profileImage: Joi.string().optional().allow("", null),
   otp: Joi.number().optional().allow(null),
   otpExpireTime: Joi.date().optional().allow(null),
-  ...baseApiSchema,
+  ...commonApiSchema,
 });
 
 export const editUserSchema = Joi.object<IUser>().keys({
@@ -24,7 +24,7 @@ export const editUserSchema = Joi.object<IUser>().keys({
   profileImage: Joi.string().optional().allow("", null),
   otp: Joi.number().optional().allow(null),
   otpExpireTime: Joi.date().optional().allow(null),
-  ...baseApiSchema,
+  ...commonApiSchema,
 });
 
 export const deleteUserSchema = Joi.object<IId>().keys({
@@ -32,5 +32,5 @@ export const deleteUserSchema = Joi.object<IId>().keys({
 });
 
 export const getUserSchema = Joi.object<ICommonGetValidate>().keys({
-  ...baseCommonFieldSchema,
+  ...CommonFieldSchema,
 });

@@ -6,7 +6,7 @@ const router = Router();
 
 router.post("/add", adminJWT, userController.addUser);
 router.put("/edit", adminJWT, userController.editUser);
-router.get("/get", userJWT, userController.getUser);
+router.get("/all", userJWT, userController.getAllUser);
 router.delete("/:id", adminJWT, userController.deleteUser);
 
-export const userRouter = router;
+export { router as userRouter };

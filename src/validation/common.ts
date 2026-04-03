@@ -11,7 +11,7 @@ export const objectId = () =>
     }, "ObjectId Validation")
     .allow(null);
 
-export const baseApiSchema = {
+export const commonApiSchema = {
   isActive: Joi.boolean().optional(),
 };
 
@@ -27,7 +27,7 @@ export const commonIdSchema = Joi.object({
   id: objectId().required(),
 });
 
-export const baseCommonFieldSchema = {
+export const CommonFieldSchema = {
   page: Joi.number().optional(),
   limit: Joi.number().optional(),
   search: Joi.string().optional(),

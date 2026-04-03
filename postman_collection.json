@@ -1,7 +1,7 @@
 {
   "item": [
     {
-      "id": "a899fc13-a426-4820-b50e-e40deca9115c",
+      "id": "31c0168b-ad13-4cdb-9807-7881d8b9592c",
       "name": "AUTH",
       "description": {
         "content": "Routes for auth",
@@ -9,11 +9,11 @@
       },
       "item": [
         {
-          "id": "62bc55b9-77a0-4021-be8d-599d846d7cac",
+          "id": "3c6aa349-9d27-4e6f-bfcf-4164d684b024",
           "name": "Register",
           "request": {
             "description": {
-              "content": "Controller: register\nSchema: registerSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| firstName | string | Required |\n| lastName | string | Required |\n| email | string | Required |\n| password | string | Required |\n| profileImage | string | Optional |\n| role | string | Optional |\n| phoneNo | object | Optional |\n| phoneNo.countryCode | string | Optional |\n| phoneNo.number | string | Optional |\n",
+              "content": "Controller: register\nSchema: registerSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| firstName | string | Required |\n| lastName | string | Required |\n| email | string | Required |\n| password | string | Required |\n| profileImage | string | Optional |\n| phoneNo | object | Optional |\n| phoneNo.countryCode | string | Optional |\n| phoneNo.number | string | Optional |\n",
               "type": "text/markdown"
             },
             "url": {
@@ -36,14 +36,14 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"firstName\": \"sample_firstName\",\n  \"lastName\": \"sample_lastName\",\n  \"email\": \"test@example.com\",\n  \"password\": \"Password123!\",\n  \"profileImage\": \"sample_profileImage\",\n  \"role\": \"sample_role\",\n  \"phoneNo\": {\n    \"countryCode\": \"sample_countryCode\",\n    \"number\": \"sample_number\"\n  }\n}"
+              "raw": "{\n  \"firstName\": \"shakil\",\n  \"lastName\": \"Gaha\",\n  \"email\": \"shakildigiverse@gmail.com\",\n  \"password\": \"Admin@123\",\n  \"profileImage\": \"sample_profileImage\",\n  \"phoneNo\": {\n    \"countryCode\": \"91\",\n    \"number\": \"1122334455\"\n  }\n}"
             }
           },
           "response": [],
           "event": []
         },
         {
-          "id": "d35f1635-96a8-422a-8729-31c8f753ba14",
+          "id": "3724a59e-e94b-488d-854e-953224b3f506",
           "name": "Login",
           "request": {
             "description": {
@@ -70,14 +70,14 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"Password123!\"\n}"
+              "raw": "{\n  \"email\": \"krishhkdigiverse@gmail.com\",\n  \"password\": \"Admin@123\"\n}"
             }
           },
           "response": [],
           "event": []
         },
         {
-          "id": "cfe5552a-36b2-4d46-b09d-6acec972c983",
+          "id": "6a2ab788-c4d3-41ba-af60-fff4ac000b59",
           "name": "Forgot Password",
           "request": {
             "description": {
@@ -111,7 +111,7 @@
           "event": []
         },
         {
-          "id": "b95c8aa1-4f29-4e96-9392-e9d1639f87ce",
+          "id": "eec96b9d-779a-41d4-b80f-10aedaa48ee6",
           "name": "Update Password",
           "request": {
             "description": {
@@ -145,7 +145,7 @@
           "event": []
         },
         {
-          "id": "37ff3c5d-10f0-4975-9fe9-25c08e6d2dbf",
+          "id": "b371bc74-71ca-4d0c-bd34-1dac02381c0e",
           "name": "Reset Password",
           "request": {
             "description": {
@@ -179,7 +179,7 @@
           "event": []
         },
         {
-          "id": "20b909ae-6064-492f-bddb-486c7975b9fe",
+          "id": "96329cfb-0552-4f0a-83b5-724edb4a627e",
           "name": "Verify Otp",
           "request": {
             "description": {
@@ -206,14 +206,14 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"email\": \"test@example.com\",\n  \"otp\": \"sample_otp\"\n}"
+              "raw": "{\n  \"email\": \"krishhkdigiverse@gmail.com\",\n  \"otp\": \"133043\"\n}"
             }
           },
           "response": [],
           "event": []
         },
         {
-          "id": "0716638a-db9b-4580-82a5-d2d223a5163c",
+          "id": "39778d79-ea02-4601-bf55-ef5fbdf4adc1",
           "name": "Resend Otp",
           "request": {
             "description": {
@@ -240,7 +240,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"email\": \"test@example.com\"\n}"
+              "raw": "{\n  \"email\": \"krishhkdigiverse@gmail.com\"\n}"
             }
           },
           "response": [],
@@ -250,7 +250,7 @@
       "event": []
     },
     {
-      "id": "58e5f282-abe9-43ea-ac4b-bd05dc539813",
+      "id": "688b6480-be95-4b6f-bfda-c4e631fa974b",
       "name": "USER",
       "description": {
         "content": "Routes for user",
@@ -258,11 +258,11 @@
       },
       "item": [
         {
-          "id": "b715dd8c-dbc3-4503-898b-11221ddd4c81",
+          "id": "cc2511bd-95b4-49d7-a38c-bafc95817e85",
           "name": "Add User",
           "request": {
             "description": {
-              "content": "Controller: addUser\nSchema: addUserSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| firstName | string | Optional |\n| lastName | string | Optional |\n| email | string | Optional |\n| phoneNo | object | Optional |\n| phoneNo.countryCode | string | Optional |\n| phoneNo.number | string | Optional |\n| password | string | Optional |\n| profileImage | string | Optional |\n| otp | number | Optional |\n| otpExpireTime | date | Optional |\n| offers | array | Optional |\n| logoTitle | string | Optional |\n| isActive | boolean | Optional |\n",
+              "content": "Controller: addUser\nSchema: addUserSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| firstName | string | Optional |\n| lastName | string | Optional |\n| email | string | Optional |\n| phoneNo | object | Optional |\n| phoneNo.countryCode | string | Optional |\n| phoneNo.number | string | Optional |\n| password | string | Optional |\n| profileImage | string | Optional |\n| otp | number | Optional |\n| otpExpireTime | date | Optional |\n| isActive | boolean | Optional |\n",
               "type": "text/markdown"
             },
             "url": {
@@ -285,18 +285,18 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"firstName\": \"sample_firstName\",\n  \"lastName\": \"sample_lastName\",\n  \"email\": \"test@example.com\",\n  \"phoneNo\": {\n    \"countryCode\": \"sample_countryCode\",\n    \"number\": \"sample_number\"\n  },\n  \"password\": \"Password123!\",\n  \"profileImage\": \"sample_profileImage\",\n  \"otp\": 123,\n  \"otpExpireTime\": \"\",\n  \"offers\": [\n    \"sample_string\"\n  ],\n  \"logoTitle\": \"sample_logoTitle\",\n  \"isActive\": true\n}"
+              "raw": "{\n  \"firstName\": \"sample_firstName\",\n  \"lastName\": \"sample_lastName\",\n  \"email\": \"test@example.com\",\n  \"phoneNo\": {\n    \"countryCode\": \"sample_countryCode\",\n    \"number\": \"sample_number\"\n  },\n  \"password\": \"Password123!\",\n  \"profileImage\": \"sample_profileImage\",\n  \"otp\": 123,\n  \"otpExpireTime\": \"\",\n  \"isActive\": true,\n  \"offers\": [\n    \"sample_string\"\n  ],\n  \"logoTitle\": \"sample_logoTitle\"\n}"
             }
           },
           "response": [],
           "event": []
         },
         {
-          "id": "bb8a34cf-f38b-42c2-b0f9-b42a14c973df",
+          "id": "d356707e-29ba-410e-bb4f-69bc01a7daff",
           "name": "Edit User",
           "request": {
             "description": {
-              "content": "Controller: editUser\nSchema: editUserSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| userId | string | Required |\n| firstName | string | Optional |\n| lastName | string | Optional |\n| email | string | Optional |\n| phoneNo | object | Optional |\n| phoneNo.countryCode | string | Optional |\n| phoneNo.number | string | Optional |\n| password | string | Optional |\n| profileImage | string | Optional |\n| otp | number | Optional |\n| otpExpireTime | date | Optional |\n| offers | array | Optional |\n| logoTitle | string | Optional |\n| isActive | boolean | Optional |\n",
+              "content": "Controller: editUser\nSchema: editUserSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| userId | string | Required |\n| firstName | string | Optional |\n| lastName | string | Optional |\n| email | string | Optional |\n| phoneNo | object | Optional |\n| phoneNo.countryCode | string | Optional |\n| phoneNo.number | string | Optional |\n| password | string | Optional |\n| profileImage | string | Optional |\n| otp | number | Optional |\n| otpExpireTime | date | Optional |\n| isActive | boolean | Optional |\n",
               "type": "text/markdown"
             },
             "url": {
@@ -319,24 +319,403 @@
             "method": "PUT",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"userId\": \"sample_userId\",\n  \"firstName\": \"sample_firstName\",\n  \"lastName\": \"sample_lastName\",\n  \"email\": \"test@example.com\",\n  \"phoneNo\": {\n    \"countryCode\": \"sample_countryCode\",\n    \"number\": \"sample_number\"\n  },\n  \"password\": \"Password123!\",\n  \"profileImage\": \"sample_profileImage\",\n  \"otp\": 123,\n  \"otpExpireTime\": \"\",\n  \"offers\": [\n    \"sample_string\"\n  ],\n  \"logoTitle\": \"sample_logoTitle\",\n  \"isActive\": true\n}"
+              "raw": "{\n  \"userId\": \"sample_userId\",\n  \"firstName\": \"sample_firstName\",\n  \"lastName\": \"sample_lastName\",\n  \"email\": \"test@example.com\",\n  \"phoneNo\": {\n    \"countryCode\": \"sample_countryCode\",\n    \"number\": \"sample_number\"\n  },\n  \"password\": \"Password123!\",\n  \"profileImage\": \"sample_profileImage\",\n  \"otp\": 123,\n  \"otpExpireTime\": \"\",\n  \"isActive\": true,\n  \"offers\": [\n    \"sample_string\"\n  ],\n  \"logoTitle\": \"sample_logoTitle\"\n}"
             }
           },
           "response": [],
           "event": []
         },
         {
-          "id": "97aef9cd-5225-4547-a9e8-a8c341148e1d",
+          "id": "d14f18cc-98c3-4ff2-86eb-94dab7e41c21",
           "name": "Get User",
           "request": {
             "description": {
-              "content": "Controller: getUser\nSchema: getUserSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| page | number | Optional |\n| limit | number | Optional |\n| search | string | Optional |\n| activeFilter | boolean | Optional |\n",
+              "content": "Controller: getAllUser\nSchema: getUserSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| page | number | Optional |\n| limit | number | Optional |\n| search | string | Optional |\n| activeFilter | boolean | Optional |\n",
               "type": "text/markdown"
             },
             "url": {
               "path": [
                 "user",
+                "all"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "search",
+                  "value": "Gaha"
+                },
+                {
+                  "key": "activeFilter",
+                  "value": "true"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "e7726b10-16be-4a04-b094-4d678c40d301",
+          "name": "Delete User",
+          "request": {
+            "description": {
+              "content": "Controller: deleteUser\nSchema: deleteUserSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| id | string | Required |\n",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "user",
+                ":id"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "type": "any",
+                  "key": "id"
+                },
+                {
+                  "type": "any",
+                  "value": "sample_id",
+                  "key": "id"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"sample_id\"\n}"
+            }
+          },
+          "response": [],
+          "event": []
+        }
+      ],
+      "event": [],
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "TOKEN",
+            "value": "{{TOKEN}}",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "id": "44ffba50-3f2c-4d40-a259-65b9fc58b150",
+      "name": "SETTING",
+      "description": {
+        "content": "Routes for setting",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ed2eeed8-c0a8-415e-b417-e9febd92ff3a",
+          "name": "Update Setting",
+          "request": {
+            "description": {
+              "content": "Controller: updateSetting\nSchema: updateSettingSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| email | string | Optional |\n| phoneNo | object | Optional |\n| phoneNo.countryCode | string | Optional |\n| phoneNo.number | string | Optional |\n| address | string | Optional |\n| mapLink | string | Optional |\n| logo | string | Optional |\n| favicon | string | Optional |\n| socialMediaLinks | array | Optional |\n| socialMediaLinks[].title | string | Optional |\n| socialMediaLinks[].link | string | Required |\n| socialMediaLinks[].icon | string | Required |\n| socialMediaLinks[].isActive | boolean | Optional |\n| isActive | boolean | Optional |\n",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "setting",
+                "update"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@example.com\",\n  \"phoneNo\": {\n    \"countryCode\": \"sample_countryCode\",\n    \"number\": \"sample_number\"\n  },\n  \"address\": \"sample_address\",\n  \"mapLink\": \"sample_mapLink\",\n  \"logo\": \"sample_logo\",\n  \"favicon\": \"sample_favicon\",\n  \"socialMediaLinks\": [\n    {\n      \"title\": \"sample_title\",\n      \"link\": \"sample_link\",\n      \"icon\": \"sample_icon\",\n      \"isActive\": true\n    }\n  ],\n  \"isActive\": true\n}"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "87e99bf6-012f-48b3-b48f-5bc505dd6978",
+          "name": "Get Get",
+          "request": {
+            "description": {
+              "content": "Controller: getSetting",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "setting",
                 "get"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "response": [],
+          "event": []
+        }
+      ],
+      "event": [],
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "TOKEN",
+            "value": "{{TOKEN}}",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e29d69b0-9791-432c-8f95-17f73105297d",
+      "name": "UPLOAD",
+      "description": {
+        "content": "Routes for upload",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c4af6f95-b281-4dbf-a175-a91d1f6938b8",
+          "name": "Create Item",
+          "request": {
+            "description": {
+              "content": "Controller: uploadFile",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "upload"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {}
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "be0b7635-2c6c-4312-80a4-a536624aa0e9",
+          "name": "Delete Image",
+          "request": {
+            "description": {
+              "content": "Controller: deleteUploadedFile\nSchema: deleteImageSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| fileUrl | string | Required |\n",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "upload",
+                "delete"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [
+                {
+                  "key": "fileUrl",
+                  "value": "sample_fileUrl"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fileUrl\": \"http://localhost:5500/public/images/1774523128024_Image-from-iOS.jpg\"\n}"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "3814e255-0be8-465e-9ae5-c0c5e56a7e58",
+          "name": "Get Images",
+          "request": {
+            "description": {
+              "content": "Controller: getAllImages",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "upload",
+                "images"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "145d05dc-17f5-40f5-98f4-fc729cd2470b",
+          "name": "Get Pdfs",
+          "request": {
+            "description": {
+              "content": "Controller: getAllPdfs",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "upload",
+                "pdfs"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "response": [],
+          "event": []
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "7fb62e6a-bf37-4aa2-99e3-4040bb2c7e86",
+      "name": "GALLERY",
+      "description": {
+        "content": "Routes for gallery",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2e1d3214-d2ac-46d8-ad58-6390dd86ec5f",
+          "name": "Add Gallery",
+          "request": {
+            "description": {
+              "content": "Controller: addGallery\nSchema: addGallerySchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| title | string | Optional |\n| images | array | Optional |\n| isActive | boolean | Optional |\n",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "gallery",
+                "add"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"sample_title1\",\n  \"images\": [\n    \"http://localhost:5500/public/images/1775189044192_Screenshot-2026-03-12-182811.png\",\n    \"http://localhost:5500/public/images/1775189044196_Image-from-iOS.jpg\"\n  ],\n  \"isActive\": true\n}"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "4b1c1d80-a4ec-46ba-a28d-b99155fc6b2d",
+          "name": "Edit Gallery",
+          "request": {
+            "description": {
+              "content": "Controller: editGallery\nSchema: editGallerySchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| galleryId | string | Required |\n| title | string | Optional |\n| images | array | Optional |\n| isActive | boolean | Optional |\n",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "gallery",
+                "edit"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"galleryId\": \"sample_galleryId\",\n  \"title\": \"sample_title1\",\n  \"images\": [\n    \"http://localhost:5500/public/images/1775189044192_Screenshot-2026-03-12-182811.png\",\n    \"http://localhost:5500/public/images/1775189044196_Image-from-iOS.jpg\"\n  ],\n  \"isActive\": true\n}"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "afdeaebd-03bb-4c69-b04a-aeee603d6081",
+          "name": "Get Gallery",
+          "request": {
+            "description": {
+              "content": "Controller: getAllGallery\nSchema: getGallerySchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| page | number | Optional |\n| limit | number | Optional |\n| search | string | Optional |\n| activeFilter | boolean | Optional |\n",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "gallery",
+                "all"
               ],
               "host": [
                 "{{BASE_URL}}"
@@ -368,16 +747,16 @@
           "event": []
         },
         {
-          "id": "6ecb1207-7735-44a4-864f-7c4b7c07f4b3",
-          "name": "Delete User",
+          "id": "45f391a8-e601-48cb-86b8-dd20263bd03d",
+          "name": "Delete Gallery",
           "request": {
             "description": {
-              "content": "Controller: deleteUser\nSchema: deleteUserSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| id | string | Required |\n",
+              "content": "Controller: deleteGallery\nSchema: deleteGallerySchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| id | string | Required |\n",
               "type": "text/markdown"
             },
             "url": {
               "path": [
-                "user",
+                "gallery",
                 ":id"
               ],
               "host": [
@@ -439,7 +818,7 @@
     }
   ],
   "info": {
-    "_postman_id": "f04b361b-e44f-4071-8217-ff0f00b0c2b5",
+    "_postman_id": "960a3833-5a9c-4a12-a4b8-87d5a552a46f",
     "name": "HKDigiverse API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {

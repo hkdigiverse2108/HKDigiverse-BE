@@ -70,7 +70,7 @@ export const deleteUser = async (req, res) => {
   }
 };
 
-export const getUser = async (req, res) => {
+export const getAllUser = async (req, res) => {
   reqInfo(req);
   try {
     const { error, value }: IGetCommonValidate = await getUserSchema.validate(req.query);
