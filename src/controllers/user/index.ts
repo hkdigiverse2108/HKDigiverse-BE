@@ -1,7 +1,7 @@
 import { isValidObjectId } from "mongoose";
 import { HTTP_STATUS, resolvePagination, resolveSortAndFilter } from "../../common";
 import { userModel } from "../../database";
-import { countData, createOne, getData, getFirstMatch, reqInfo, responseMessage, updateData } from "../../helper";
+import { countData, createOne, deleteData, getData, getFirstMatch, reqInfo, responseMessage, updateData } from "../../helper";
 import { apiResponse, ICommonIdValidate, IGetCommonValidate, IUserValidate } from "../../type";
 import { addUserSchema, deleteUserSchema, editUserSchema, getUserSchema } from "../../validation";
 
@@ -60,7 +60,7 @@ export const deleteUser = async (req, res) => {
     let isExisting = await getFirstMatch(userModel, { _id: value?.id, isDeleted: false }, {}, {});
     if (!isExisting) return res.status(HTTP_STATUS.NOT_FOUND).json(apiResponse(HTTP_STATUS.NOT_FOUND, responseMessage?.getDataNotFound("User"), {}, {}));
 
-    const response = await updateData(userModel, { _id: isValidObjectId(value?.id) }, { isDeleted: true, updatedBy: user?._id }, {});
+    const response = await deleteData(userModel, { _id: isValidObjectId(value?.id) }, { updatedBy: user?._id }, {});
     if (!response) return res.status(HTTP_STATUS.NOT_IMPLEMENTED).json(apiResponse(HTTP_STATUS.NOT_IMPLEMENTED, responseMessage?.deleteDataError("User"), {}, {}));
 
     return res.status(HTTP_STATUS.OK).json(apiResponse(HTTP_STATUS.OK, responseMessage?.deleteDataSuccess("User"), response, {}));

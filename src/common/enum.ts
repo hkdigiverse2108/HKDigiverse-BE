@@ -7,3 +7,8 @@ export const SOCIAL_MEDIA_TYPE = {
   YOUTUBE: "youtube",
   TELEGRAM: "telegram",
 } as const;
+
+export const POLICY_TYPE = {
+  PRIVACY: "privacy",
+  TERMS_CONDITION: "termsCondition",
+} as const;

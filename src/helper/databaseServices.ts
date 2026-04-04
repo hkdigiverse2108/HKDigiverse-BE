@@ -59,10 +59,10 @@ export const updateMany = async (modelName, criteria, dataToSet, options) => {
 
 // ================ All Delete Services ================
 
-export const deleteData = async (model, criteria, options) => {
+export const deleteData = async (model, criteria, dataToSet, options) => {
   options.returnDocument = "after";
   options.lean = true;
-  return await model.findOneAndUpdate(criteria, { isDeleted: true }, options);
+  return await model.findOneAndUpdate(criteria, { ...dataToSet, isDeleted: true }, options);
 };
 
 // ================ Count Data Services ================

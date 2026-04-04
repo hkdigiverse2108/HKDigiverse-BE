@@ -1,6 +1,6 @@
 import { HTTP_STATUS, isValidObjectId, resolvePagination, resolveSortAndFilter } from "../../common";
 import { galleryModel } from "../../database";
-import { countData, createOne, getData, getFirstMatch, reqInfo, responseMessage, updateData } from "../../helper";
+import { countData, createOne, deleteData, getData, getFirstMatch, reqInfo, responseMessage, updateData } from "../../helper";
 import { apiResponse, ICommonIdValidate, IGalleryValidate, IGetCommonValidate } from "../../type";
 import { addGallerySchema, deleteGallerySchema, editGallerySchema, getGallerySchema } from "../../validation";
 
@@ -64,7 +64,7 @@ export const deleteGallery = async (req, res) => {
     let isExisting = await getFirstMatch(galleryModel, { _id: value?.id, isDeleted: false }, {}, {});
     if (!isExisting) return res.status(HTTP_STATUS.NOT_FOUND).json(apiResponse(HTTP_STATUS.NOT_FOUND, responseMessage?.getDataNotFound("Gallery"), {}, {}));
 
-    const response = await updateData(galleryModel, { _id: isValidObjectId(value?.id) }, { isDeleted: true, updatedBy: user?._id }, {});
+    const response = await deleteData(galleryModel, { _id: isValidObjectId(value?.id) }, { updatedBy: user?._id }, {});
     if (!response) return res.status(HTTP_STATUS.NOT_IMPLEMENTED).json(apiResponse(HTTP_STATUS.NOT_IMPLEMENTED, responseMessage?.deleteDataError("Gallery"), {}, {}));
 
     return res.status(HTTP_STATUS.OK).json(apiResponse(HTTP_STATUS.OK, responseMessage?.deleteDataSuccess("Gallery"), response, {}));

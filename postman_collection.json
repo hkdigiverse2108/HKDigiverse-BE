@@ -1,7 +1,7 @@
 {
   "item": [
     {
-      "id": "31c0168b-ad13-4cdb-9807-7881d8b9592c",
+      "id": "5f4ad672-6b6f-4c35-aca3-9dcf7df962ba",
       "name": "AUTH",
       "description": {
         "content": "Routes for auth",
@@ -9,7 +9,7 @@
       },
       "item": [
         {
-          "id": "3c6aa349-9d27-4e6f-bfcf-4164d684b024",
+          "id": "cdd39dc4-094f-4283-8523-56e9dad3cb7a",
           "name": "Register",
           "request": {
             "description": {
@@ -43,7 +43,7 @@
           "event": []
         },
         {
-          "id": "3724a59e-e94b-488d-854e-953224b3f506",
+          "id": "7a1307f9-d78e-4d9c-b0ef-2794414853ea",
           "name": "Login",
           "request": {
             "description": {
@@ -77,7 +77,7 @@
           "event": []
         },
         {
-          "id": "6a2ab788-c4d3-41ba-af60-fff4ac000b59",
+          "id": "9b10f844-c3c0-4d9d-a4cf-72f7229879fb",
           "name": "Forgot Password",
           "request": {
             "description": {
@@ -111,7 +111,7 @@
           "event": []
         },
         {
-          "id": "eec96b9d-779a-41d4-b80f-10aedaa48ee6",
+          "id": "066eac14-6f4a-427b-941e-78c1c780b4b1",
           "name": "Update Password",
           "request": {
             "description": {
@@ -145,7 +145,7 @@
           "event": []
         },
         {
-          "id": "b371bc74-71ca-4d0c-bd34-1dac02381c0e",
+          "id": "26ad3f9b-0ec7-471e-b5a3-0beabe659218",
           "name": "Reset Password",
           "request": {
             "description": {
@@ -179,7 +179,7 @@
           "event": []
         },
         {
-          "id": "96329cfb-0552-4f0a-83b5-724edb4a627e",
+          "id": "d190a406-dae7-4587-8e0f-11beea7c6bdd",
           "name": "Verify Otp",
           "request": {
             "description": {
@@ -213,7 +213,7 @@
           "event": []
         },
         {
-          "id": "39778d79-ea02-4601-bf55-ef5fbdf4adc1",
+          "id": "26df70b8-fd70-42bf-9124-b236a31025c6",
           "name": "Resend Otp",
           "request": {
             "description": {
@@ -250,7 +250,7 @@
       "event": []
     },
     {
-      "id": "688b6480-be95-4b6f-bfda-c4e631fa974b",
+      "id": "45b4de02-4a15-479b-a6aa-2f14d644eb54",
       "name": "USER",
       "description": {
         "content": "Routes for user",
@@ -258,7 +258,7 @@
       },
       "item": [
         {
-          "id": "cc2511bd-95b4-49d7-a38c-bafc95817e85",
+          "id": "e268095f-7a70-47e2-9ad6-f244e5de2d93",
           "name": "Add User",
           "request": {
             "description": {
@@ -292,7 +292,7 @@
           "event": []
         },
         {
-          "id": "d356707e-29ba-410e-bb4f-69bc01a7daff",
+          "id": "da2f0e95-ff41-4a2c-a6b5-d12be480a233",
           "name": "Edit User",
           "request": {
             "description": {
@@ -326,7 +326,7 @@
           "event": []
         },
         {
-          "id": "d14f18cc-98c3-4ff2-86eb-94dab7e41c21",
+          "id": "4464ca33-15fc-41c1-820d-2be1ac1d7e19",
           "name": "Get User",
           "request": {
             "description": {
@@ -368,7 +368,7 @@
           "event": []
         },
         {
-          "id": "e7726b10-16be-4a04-b094-4d678c40d301",
+          "id": "2ee294c5-db1e-4f2a-853d-bc79b33514ae",
           "name": "Delete User",
           "request": {
             "description": {
@@ -425,7 +425,7 @@
       }
     },
     {
-      "id": "44ffba50-3f2c-4d40-a259-65b9fc58b150",
+      "id": "a311cf83-d438-4feb-a85f-42e4acde1d01",
       "name": "SETTING",
       "description": {
         "content": "Routes for setting",
@@ -433,7 +433,7 @@
       },
       "item": [
         {
-          "id": "ed2eeed8-c0a8-415e-b417-e9febd92ff3a",
+          "id": "930d6c9a-efbb-4a79-9ded-14254fa244a2",
           "name": "Update Setting",
           "request": {
             "description": {
@@ -467,7 +467,7 @@
           "event": []
         },
         {
-          "id": "87e99bf6-012f-48b3-b48f-5bc505dd6978",
+          "id": "99d65c05-041d-4407-ab6b-537adf2b77ae",
           "name": "Get Get",
           "request": {
             "description": {
@@ -505,7 +505,7 @@
       }
     },
     {
-      "id": "e29d69b0-9791-432c-8f95-17f73105297d",
+      "id": "9c76b4db-fac3-4df9-9b11-4a2fe38c1fe3",
       "name": "UPLOAD",
       "description": {
         "content": "Routes for upload",
@@ -513,7 +513,7 @@
       },
       "item": [
         {
-          "id": "c4af6f95-b281-4dbf-a175-a91d1f6938b8",
+          "id": "08c75fce-7f28-48c3-a789-b2ab91a4ed92",
           "name": "Create Item",
           "request": {
             "description": {
@@ -537,7 +537,7 @@
           "event": []
         },
         {
-          "id": "be0b7635-2c6c-4312-80a4-a536624aa0e9",
+          "id": "432277f5-ef1d-47e0-904d-95cc9f4df19a",
           "name": "Delete Image",
           "request": {
             "description": {
@@ -576,7 +576,7 @@
           "event": []
         },
         {
-          "id": "3814e255-0be8-465e-9ae5-c0c5e56a7e58",
+          "id": "aac126bb-f938-4176-b896-4641bd9c08d8",
           "name": "Get Images",
           "request": {
             "description": {
@@ -601,7 +601,7 @@
           "event": []
         },
         {
-          "id": "145d05dc-17f5-40f5-98f4-fc729cd2470b",
+          "id": "20bc0308-b881-443e-86c8-a87e8aafde72",
           "name": "Get Pdfs",
           "request": {
             "description": {
@@ -629,7 +629,7 @@
       "event": []
     },
     {
-      "id": "7fb62e6a-bf37-4aa2-99e3-4040bb2c7e86",
+      "id": "5b7abb16-2c58-4bcd-9984-b603104e6f66",
       "name": "GALLERY",
       "description": {
         "content": "Routes for gallery",
@@ -637,7 +637,7 @@
       },
       "item": [
         {
-          "id": "2e1d3214-d2ac-46d8-ad58-6390dd86ec5f",
+          "id": "4d63e794-6312-4e58-88b1-a48c0f69d2cc",
           "name": "Add Gallery",
           "request": {
             "description": {
@@ -671,7 +671,7 @@
           "event": []
         },
         {
-          "id": "4b1c1d80-a4ec-46ba-a28d-b99155fc6b2d",
+          "id": "83625380-49ca-4485-b2e3-ec42d0257a6c",
           "name": "Edit Gallery",
           "request": {
             "description": {
@@ -698,14 +698,14 @@
             "method": "PUT",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"galleryId\": \"sample_galleryId\",\n  \"title\": \"sample_title1\",\n  \"images\": [\n    \"http://localhost:5500/public/images/1775189044192_Screenshot-2026-03-12-182811.png\",\n    \"http://localhost:5500/public/images/1775189044196_Image-from-iOS.jpg\"\n  ],\n  \"isActive\": true\n}"
+              "raw": "{\n  \"galleryId\": \"69cf682adc008bb38f2bdd1f\",\n  \"title\": \"sample_title1---------------------\",\n  \"images\": [\n    \"http://localhost:5500/public/images/1775189044192_Screenshot-2026-03-12-182811.png\",\n    \"http://localhost:5500/public/images/1775189044196_Image-from-iOS.jpg\"\n  ],\n  \"isActive\": true\n}"
             }
           },
           "response": [],
           "event": []
         },
         {
-          "id": "afdeaebd-03bb-4c69-b04a-aeee603d6081",
+          "id": "b7054d0a-2551-47e7-836b-7f5f3b4bde83",
           "name": "Get Gallery",
           "request": {
             "description": {
@@ -747,7 +747,7 @@
           "event": []
         },
         {
-          "id": "45f391a8-e601-48cb-86b8-dd20263bd03d",
+          "id": "024ffb59-cd0e-49f4-ac2e-c02b4fdf766e",
           "name": "Delete Gallery",
           "request": {
             "description": {
@@ -802,6 +802,257 @@
           }
         ]
       }
+    },
+    {
+      "id": "c068018f-5142-48c7-a590-e055fb7ae522",
+      "name": "CONTACTUS",
+      "description": {
+        "content": "Routes for contactUs",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "40e8302e-6fbb-40ad-9c76-3672aea9ab68",
+          "name": "Add Contact Us",
+          "request": {
+            "description": {
+              "content": "Controller: addContactUs\nSchema: addContactUsSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| name | string | Required |\n| phoneNo | object | Required |\n| phoneNo.countryCode | string | Optional |\n| phoneNo.number | string | Optional |\n| email | string | Optional |\n| message | string | Optional |\n| isActive | boolean | Optional |\n",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "contact-us",
+                "add"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"sample_name\",\n  \"phoneNo\": {\n    \"countryCode\": \"91\",\n    \"number\": \"12345678953\"\n  },\n  \"email\": \"test@example.com\",\n  \"message\": \"sample_message\",\n  \"isActive\": true\n}"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "30cf9483-ee30-4715-b5b5-e3eb3dbd401a",
+          "name": "Edit Contact Us",
+          "request": {
+            "description": {
+              "content": "Controller: editContactUs\nSchema: editContactUsSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| contactUsId | string | Required |\n| name | string | Optional |\n| phoneNo | object | Optional |\n| phoneNo.countryCode | string | Optional |\n| phoneNo.number | string | Optional |\n| email | string | Optional |\n| message | string | Optional |\n| isActive | boolean | Optional |\n",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "contact-us",
+                "edit"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"contactUsId\": \"69d089009f35114123708e7d\",\n  \"name\": \"sample_name\",\n  \"phoneNo\": {\n    \"countryCode\": \"91\",\n    \"number\": \"12345678951\"\n  },\n  \"email\": \"test@example.com\",\n  \"message\": \"sample_message\",\n  \"isActive\": true\n}"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "5345c609-d226-4c46-8a02-4b02f2e0d3f1",
+          "name": "Get Contact Us",
+          "request": {
+            "description": {
+              "content": "Controller: getAllContactUs\nSchema: getContactUsSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| page | number | Optional |\n| limit | number | Optional |\n| search | string | Optional |\n| activeFilter | boolean | Optional |\n",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "contact-us",
+                "all"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "search",
+                  "value": "sample_search"
+                },
+                {
+                  "key": "activeFilter",
+                  "value": "true"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "90b065f4-7cc8-40f9-b7c5-e51ac7ae3448",
+          "name": "Common Id",
+          "request": {
+            "description": {
+              "content": "Controller: deleteContactUs\nSchema: commonIdSchema",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "contact-us",
+                ":id"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "type": "any",
+                  "key": "id"
+                },
+                {
+                  "type": "any",
+                  "value": "sample_id",
+                  "key": "id"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "body": {}
+          },
+          "response": [],
+          "event": []
+        }
+      ],
+      "event": [],
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "TOKEN",
+            "value": "{{TOKEN}}",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "id": "7ebad421-8c75-4725-9baf-a2bf8fb657fe",
+      "name": "POLICY",
+      "description": {
+        "content": "Routes for policy",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "af1f89ae-78eb-4812-9008-bd1848502304",
+          "name": "Update Policy",
+          "request": {
+            "description": {
+              "content": "Controller: updatePolicy\nSchema: updatePolicySchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| type | string | Required |\n| description | string | Required |\n| isActive | boolean | Optional |\n",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "policy",
+                "update"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"privacy\",\n  \"description\": \"sample_description 111\",\n  \"isActive\": true\n}"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "69fd4527-1131-42b5-b957-ff3ec7fb0e8d",
+          "name": "Get Policy By Type",
+          "request": {
+            "description": {
+              "content": "Controller: getPolicy\nSchema: getPolicyByTypeSchema\n\n### Validation Rules\n| Field | Type | Requirement |\n|---|---|---|\n| typeFilter | string | Required |\n",
+              "type": "text/markdown"
+            },
+            "url": {
+              "path": [
+                "policy",
+                "get"
+              ],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "query": [
+                {
+                  "key": "typeFilter",
+                  "value": "privacy"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "response": [],
+          "event": []
+        }
+      ],
+      "event": [],
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "TOKEN",
+            "value": "{{TOKEN}}",
+            "type": "string"
+          }
+        ]
+      }
     }
   ],
   "event": [],
@@ -818,7 +1069,7 @@
     }
   ],
   "info": {
-    "_postman_id": "960a3833-5a9c-4a12-a4b8-87d5a552a46f",
+    "_postman_id": "150cd289-86fe-46f1-a037-4aa0ea838418",
     "name": "HKDigiverse API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {
